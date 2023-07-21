@@ -10,8 +10,6 @@ class Services extends BaseService
 {
     /**
      * Return the signed url class.
-     *
-     * @return Passage
      */
     public static function passage(?PassageConfig $config = null, bool $getShared = true): Passage
     {

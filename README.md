@@ -33,5 +33,6 @@ Also add the required helper to the same file under `$files` array:
     public $files = [
         APPPATH . 'ThirdParty/passage/src/Common.php',
     ];
+    
     // ...
 ```

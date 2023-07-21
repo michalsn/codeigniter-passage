@@ -192,6 +192,7 @@ class Passage
             throw PassageException::forInvalidAuthToken();
 
         }
+
         throw PassageException::forCookieForAuthorizationNotFound();
     }
 

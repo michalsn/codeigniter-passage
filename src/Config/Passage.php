@@ -9,7 +9,7 @@ class Passage extends BaseConfig
     /**
      * Application ID
      */
-    public string $appId  = '';
+    public string $appId = '';
 
     /**
      * You have to generate one.
