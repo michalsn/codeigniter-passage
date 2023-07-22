@@ -35,7 +35,7 @@ function createRemoteJWKSet($url): CachedKeySet
 }
 
 /**
- * Return Passage Id for current context.
+ * Set/get Passage Id for current context.
  */
 function passageId(?string $id = null)
 {
@@ -46,4 +46,12 @@ function passageId(?string $id = null)
     }
 
     $config->setUser($id);
+}
+
+/**
+ * Get Passage App Id for current context.
+ */
+function passageAppId()
+{
+    return config(Passage::class)->appId;
 }
