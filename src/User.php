@@ -130,7 +130,7 @@ class User
         ];
 
         // Send the HTTP GET request to the Passage API
-        $response = service('curlrequest')->request('get', $url, ['debug' => WRITEPATH . 'curl_log.txt', 'headers' => $headers]);
+        $response = service('curlrequest')->request('get', $url, ['headers' => $headers]);
 
         // Check if the request was successful
         if ($response->getStatusCode() === 200) {
@@ -145,7 +145,6 @@ class User
         }
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToRetrieveUserInformation();
-
     }
 
     /**

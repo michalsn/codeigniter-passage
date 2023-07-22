@@ -9,7 +9,7 @@ use Michalsn\CodeIgniterPassage\Passage;
 class Services extends BaseService
 {
     /**
-     * Return the signed url class.
+     * Return the passage class.
      */
     public static function passage(?PassageConfig $config = null, bool $getShared = true): Passage
     {
