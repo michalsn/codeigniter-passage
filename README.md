@@ -81,7 +81,7 @@ class Home extends BaseController
         try {
             $passage = service('passage');
             $userId = $passage->authenticateRequest($this->request);
-            $data = ['user' => $passage->user->get($passageId)];
+            $data = ['user' => $passage->user->get($userId)];
         } catch (PassageException $e) {
             throw PageNotFoundException::forPageNotFound($e->getMessage());
         }
