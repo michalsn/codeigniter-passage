@@ -71,7 +71,6 @@ Also add the required helper to the same file under `$files` array:
 
 namespace App\Controllers;
 
-use CodeIgniter\Exceptions\PageNotFoundException;
 use Michalsn\CodeIgniterPassage\Exceptions\PassageException;
 
 class Home extends BaseController
@@ -83,7 +82,7 @@ class Home extends BaseController
             $userId = $passage->authenticateRequest($this->request);
             $data = ['user' => $passage->user->get($userId)];
         } catch (PassageException $e) {
-            throw PageNotFoundException::forPageNotFound($e->getMessage());
+            return $this->response->setHeader(401)->setBody('401 Unauthorized');
         }
 
         return view('home/index', $data);
