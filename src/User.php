@@ -47,7 +47,6 @@ class User
         $responseData = json_decode($response->getBody(), true);
 
         return $responseData['devices'];
-
         // Return the list of user devices
     }
 
@@ -76,9 +75,9 @@ class User
         if ($response->getStatusCode() === 200) {
             return true;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToRevokeDevice();
-
     }
 
     /**
@@ -105,9 +104,9 @@ class User
         if ($response->getStatusCode() === 200) {
             return true;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToRevokeRefreshTokens();
-
     }
 
     /**
@@ -143,6 +142,7 @@ class User
 
             return $user;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToRetrieveUserInformation();
     }
@@ -180,9 +180,9 @@ class User
 
             return $user;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToDeactivateUser();
-
     }
 
     /**
@@ -218,9 +218,9 @@ class User
 
             return $user;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToActivateUser();
-
     }
 
     /**
@@ -247,9 +247,9 @@ class User
         if ($response->getStatusCode() === 200) {
             return true;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToDeleteUser();
-
     }
 
     /**
@@ -298,9 +298,9 @@ class User
 
             return $user;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToCreateUser();
-
     }
 
     /**
@@ -338,8 +338,8 @@ class User
 
             return $user;
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToUpdateUser();
-
     }
 }

@@ -91,9 +91,9 @@ class Passage
 
             return $responseData['app'];
         }
+
         // Throw a PassageError or handle the failure as needed
         throw PassageException::forCouldNotFetchApp();
-
     }
 
     /**
@@ -125,7 +125,6 @@ class Passage
         $responseData = json_decode($response->getBody(), true);
 
         return $responseData['magic_link'];
-
         // Return the magic link
     }
 
@@ -145,7 +144,6 @@ class Passage
         }
 
         return $this->authenticateRequestWithCookie($request);
-
     }
 
     /**
@@ -168,7 +166,6 @@ class Passage
         }
 
         throw PassageException::forInvalidAuthToken();
-
     }
 
     /**
@@ -190,7 +187,6 @@ class Passage
             }
 
             throw PassageException::forInvalidAuthToken();
-
         }
 
         throw PassageException::forCookieForAuthorizationNotFound();
@@ -223,9 +219,9 @@ class Passage
                 // If the 'sub' claim exists, return it as a string
                 return (string) $userId;
             }
+
             // If the 'sub' claim is missing, the token cannot be verified
             return null;
-
         } catch (Exception) {
             // An exception occurred during token verification
             return null;
@@ -256,8 +252,8 @@ class Passage
 
             return $responseData['auth_result'];
         }
+
         // Throw a PassageException or handle the failure as needed
         throw PassageException::forFailedToRefreshToken();
-
     }
 }
